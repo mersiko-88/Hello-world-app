@@ -5,7 +5,7 @@
 replicaCount: 5
 
 image:
-  repository: docker.fuchicorp.com/hello-world-app-dev-feature:57ebcaa
+  repository: docker.fuchicorp.com/hello-world-app-dev-feature:4b7aacb
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -25,13 +25,13 @@ ingress:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: hello.fuchicorp.com
+    - host: dev.hello.fuchicorp.com
       paths:
       - /
   tls:
   - secretName: hello-fuchicorp
     hosts:
-    - hello.fuchicorp.com
+    - dev.hello.fuchicorp.com
 
 
 globalEnvironments:
