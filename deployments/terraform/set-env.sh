@@ -7,7 +7,8 @@ then
   return 1 
 fi
 
-wget --quiet "--header=Authorization: token $GIT_TOKEN" "https://raw.githubusercontent.com/fuchicorp/common_scripts/master/set-environments/terraform/google-set-env.sh" \
+wget --quiet "--header=Authorization: token $GIT_ADMIN_TOKEN" "https://raw.githubusercontent.com/fuchicorp/common_scripts/master/set-environments/terraform/google-set-env.sh" \
   -O set-env >/dev/null
+
 source 'set-env' "$@"
 rm -rf "set-env"
