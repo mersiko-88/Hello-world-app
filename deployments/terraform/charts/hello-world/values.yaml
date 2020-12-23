@@ -5,13 +5,13 @@
 replicaCount: 5
 
 image:
-  repository: fsadykov/hello-world
+  repository: mersiko-88/hello-world
   tag: latest
   pullPolicy: IfNotPresent
 
 app:
-  port: 5000 
-  
+  port: 5000
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -27,15 +27,16 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # kubernetes.io/tls-acme: "true"
   hosts:
-  - host: hello.fuchicorp.com
-    paths:
-    - /
+    - host: arka2.com
+      paths:
+        - /
   tls:
-  - secretName: hello-world-tls
-    hosts:
-    - hello.fuchicorp.com
+    - secretName: hello-world-tls
+      hosts:
+        - arka2.com
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
